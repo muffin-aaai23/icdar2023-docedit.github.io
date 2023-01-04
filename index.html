@@ -9,7 +9,7 @@
     <script src="./js/common.js"></script>
     <script>      
     </script>
-    <title>ICDAR 2023 - CHART-Infographics Competition</title>
+    <title>ICDAR 2023 Competition on Language-Guided Document Editing (DocEdit)</title>
   </head>
   <body>
     <div class="h-screen" style="overflow-x: hidden">
@@ -81,8 +81,8 @@
       <div class="container mx-auto px-4 text-justify">
         <div class="text-center">
           <h1 class="font-medium leading-tight text-3xl my-4 text-gray-600">
-            <b>ICDAR 2023</b> <b>C</b>ompetition on <b>H</b>arvesting <b>A</b>nswers and <b>R</b>aw <b>T</b>ables<br/>
-            from Infographics (CHART-Infographics)
+            <b>ICDAR 2023</b> <b>C</b>Competition on <b>L</b>anguage-<b>G<b/>uided <b>D</b>ocument <b>E</b>diting <br/>
+		(DocEdit)
           </h1>
         </div>
         <div class="flex flex-col md:flex-row mb-4">
@@ -91,22 +91,13 @@
               Summary
             </h2>
             <p>
-              This competition is composed of a series of task and sub-tasks 
-			  related to chart analysis. The first task, <b>Stepwise Data Extraction</b>,  
-			  is composed of a series of 6 sub-tasks for chart data extraction, which 
-			  when put together as a pipeline go from an input chart image to a CSV file 
-			  representing the data used to create the chart.
-			  The second task, <b>End-to-end Data Extraction</b>, evaluates methods that 
-			  perform the whole chart data extraction pipeline from the chart image 
-			  without receiving intermediate inputs.
-			  The third task, <b>Visual Question Answering</b>, evaluates methods that 
-			  can take chart images and question related to the chart in the image and 
-			  can produce the right answers to the given question. 			  
+              This competition is composed of two subtasks 
+			  related to language-guided document editing. The first subtask is <b>Edit Command Generation</b>,  
+			  The second subtask is <b>Edit Localization</b> 			  
 			  Entrants in the competition may choose to
               participate in any number of sub-tasks, which are evaluated in
               isolation, such that solving previous sub-tasks is not necessary.
-              We hope that such decomposition of the problem of chart image
-              analysis will draw broad participation from the Document
+              We hope that such decomposition of the problem of automated document editing will draw broad participation from the Document
               Analysis and Recognition (DAR) community.               
             </p>
           </div>
@@ -159,11 +150,7 @@
 								<td style="text-align:top; background-color:rgb(48,60,72); color:white">   
 									<b>&nbsp Dec 29, 2022 &nbsp </b>   
 								</td>
-								<td>Previous <b>CHART-Info</b> links: 
-									<a href="index_2022.html" class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600" >ICPR 2022</a>
-									<a href="index_2020.html" class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600" >ICPR 2020</a>
-									<a href="index_2019.html" class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600" >ICDAR 2019</a>
-								</td> 
+								 
 							</tr>
 						</table>
 					</div>
@@ -181,14 +168,17 @@
             Background
           </h2>
           <p>
-            Charts are a compact method of displaying and comparing data. In
-            scientific publications, charts and graphs are often used to to
-            summarize results, comparison of methodologies, emphasize the
-            reasoning behind key aspects of the scientific process, and
-            justification of design choices, to name a few. Automatically
-            extracting data from charts is a key step in understanding the
-            intent behind a chart which could lead to a better understanding of
-            the document itself.
+            Digital documents are used extensively to help people improve business productivity (drafting contract agreements,
+presentations decks, letterheads, invoices, resumes, form filling) and communicate with customers through online advertisements, social media posts, flyers, posters, billboards,
+web and mobile app prototypes, etc. However, modern document editing tools require a skilled professional to work on a
+large screen. Challenges emerge when complex editing
+operations require multiple different functionalities wrapped
+within the editing tools for text and image region placement,
+grouping, spatial alignment, replacement, resizing, splitting,
+merging and special effects. As the creation and editing of documents becomes more ubiquitous and increasingly used by
+novice users on mobile devices, there is an increasing need to improve the accessibility of these tools through an intelligent assistant system that can understand user’s intent and
+translate it into executable code that can be processed by the
+editing tool to fulfilling a user’s editing needs.
           </p>
           <div class="flex flex-col justify-center text-center my-4">
             <img
