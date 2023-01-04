@@ -22,7 +22,7 @@
             <div class="container flex flex-wrap justify-center items-center mx-auto" >              
 			  <div style="padding-left: 50px;padding-right: 50px;">
 				<!--<img src="./img/icdar2023_logo_light_horizontal.png" style="height: 50px;"> -->
-				<img src="./img/draft_logo_light_horizontal_chart_only.png" style="height: 50px;">				
+<!-- 				<img src="./img/draft_logo_light_horizontal_chart_only.png" style="height: 50px;">				 -->
 			  </div>
               <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
                 <ul
@@ -81,7 +81,7 @@
       <div class="container mx-auto px-4 text-justify">
         <div class="text-center">
           <h1 class="font-medium leading-tight text-3xl my-4 text-gray-600">
-            <b>ICDAR 2023</b> <b>C</b>Competition on <b>L</b>anguage-<b>G<b/>uided <b>D</b>ocument <b>E</b>diting <br/>
+            <b>ICDAR 2023</b> <b>C</b>Competition on <b>L</b>anguage <b>G<b/>uided <b>D</b>ocument <b>E</b>diting <br/>
 		(DocEdit)
           </h1>
         </div>
@@ -91,9 +91,9 @@
               Summary
             </h2>
             <p>
-              This competition is composed of two subtasks 
-			  related to language-guided document editing. The first subtask is <b>Edit Command Generation</b>,  
-			  The second subtask is <b>Edit Localization</b> 			  
+              This competition is composed of two tasks 
+			  related to language-guided document editing. The first task is <b>Edit Command Generation</b>,  
+			  The second task is <b>Edit Localization</b> 			  
 			  Entrants in the competition may choose to
               participate in any number of sub-tasks, which are evaluated in
               isolation, such that solving previous sub-tasks is not necessary.
@@ -180,37 +180,7 @@ novice users on mobile devices, there is an increasing need to improve the acces
 translate it into executable code that can be processed by the
 editing tool to fulfilling a user’s editing needs.
           </p>
-          <div class="flex flex-col justify-center text-center my-4">
-            <img
-              src="./img/charts.png"
-              alt="charts"
-              class="md:max-w-4xl self-center"
-            />
-            <p>
-              Example chart types to use in the proposed competition. Note that
-              all these were generated from the same tabular data.
-            </p>
-          </div>
-          <p>
-            The DAR community has displayed a continued interest in classifying
-            types of charts as well as processing charts to extract data. In the
-            past decade, multiple applications have been built around automatic
-            processing of charts such as retrieval, textual summarization of
-            charts, making charts more accessible on the web, automatically
-            redesigning charts, automatically assessing chart quality,
-            preservation of charts from historical documents, chart data
-            plagiarism detection, bibliometrics, visual question answering and
-            accelerating discovery of new materials.
-          </p>
-          <!-- <p class="my-4">
-            Prior competitions related to this area include DeTEXT which
-            concentrated on detecting text in figures and ImageCLEF competition
-            on medical compound figure separation and multi-label
-            classification. However, these competitions do not concentrate on
-            end-to-end data extraction from scientific charts, but include these
-            as a sub-type of scientific figures in general.
-          </p> -->
-        </div>
+          
 
         <div class="flex flex-col mb-4">
           <h2 class="font-medium leading-tight text-3xl my-4 text-gray-600">
@@ -220,23 +190,15 @@ editing tool to fulfilling a user’s editing needs.
             Dataset
           </h3>
           <p>
-            Our previous competitions used both real and synthetic charts datasets for all tasks. For ICDAR 2023, we are providing a <b>extended UB-UNITEC PMC dataset</b>, which contains real charts extracted from Open-Access publications found in the <a
-              class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
-              href="https://www.ncbi.nlm.nih.gov/pmc/"
-            >
-              PubMedCentral.
-            </a>(<b>PMC</b>). Following the same protocol, we only picked images released under a Creative Commons By Attribution license (CC-BY), which allows us to redistribute them to the competition participants. 
+            
+           The input provided will be a document image to be edited and a user request describing the edit request. The expected output will be a templatic code command of the format: ACTION (Component, Attribute, Initial State, Final State, 2D coordinates) .  Here, Action describes the executable function belonging to the following taxonomy - Add, Delete, Copy, Move, Replace, Split, Merge, Modify. It is followed by arguments corresponding to the document components to be edited, attributes to be modified, initial state of the attributes, and the final state of the attributes expected in the edited version. The Region of Interest (RoI) is represented by the bounding box (x, y, h, w) enclosing the components to be edited in the input document image.
           </p>
           <br/>
-		  <p>
-		  For this competition, <b>UB-UNITEC PMC</b> has a new, larger training set (by merging training and testing sets from previous competition), and a novel testing set that is also collected and annotated on real charts. Participants can use additional datasets (e.g. <b>Adobe Synth</b> from previous competition) to improve the performance of their framework, as long as it is notified in their final result.
-		  </p>
-		  
           <h3 class="font-medium leading-tight text-2xl my-4 text-gray-600">
             Evaluation
           </h3>
           <p>
-            On March, 2023, we will release the test datasets, and by
+            On March 1, 2023, we will release the test datasets, and by
             <b>March 15th, 2023</b> competition participants are expected submit the
             following:
           </p>
@@ -260,48 +222,21 @@ editing tool to fulfilling a user’s editing needs.
 		  <p>The tasks and sub-tasks considered in this competition are</p>
 		  <ol class="list-decimal list-inside">
 			<li>
-				<b>Task 1:</b> Stepwise Data Extraction
-				<ol class="pl-5 list-decimal list-inside">
-					<li><b>Sub-task 1.1:</b> Chart Image Classification (e.g. bar, box, line)</li>
-					<li><b>Sub-task 1.2:</b> Text Detection and Recognition</li>
-					<li><b>Sub-task 1.3:</b> Text Role Classification (e.g. title, x-axis label)</li>
-					<li><b>Sub-task 1.4:</b> Axis Analysis</li>
-					<li><b>Sub-task 1.5:</b> Legend Analysis</li>
-					<li>
-					  <b>Sub-task 1.6:</b> Data Extraction
-					  <ol class="list-alpha list-inside ml-8">
-						<li><b>Sub-task 1.6.a:</b> Plot Element Detection/Classification</li>
-						<li><b>Sub-task 1.6.b:</b> Raw Data Extraction</li>
-					  </ol>
-					</li>
-				</ol>
+				<b>Task 1:</b> Edit Command Generation
 			</li>
-			<li><b>Task 2:</b> End-to-end Data Extraction</li>
-			<li><b>Task 3:</b> Visual Question Answering</li>
+			<li><b>Task 2:</b> Edit Localization</li>
 		  </ol>
           
           <br />
           <p>
             Each subtask is evaluated in isolation, meaning that systems have
             access to the ideal output (i.e. Ground Truth) of previous subtasks.
-            Subtasks 1.3-1.5 are considered parallel tasks and only receive the
-            outputs of subtasks 1.1 and 1.2. For example, the input for the Axis
-            Analysis sub-task is the chart image, chart type, text bounding
-            boxes, and text transcriptions. Each sub-task has its own evaluaton
+            Tasks are considered parallel tasks Each task has its own evaluaton
             metric, detailed on the <a href="./tasks.html" class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">Tasks</a> page.
           </p>
           <br />
           <p>
-            Participants are not obligated to perform all subtasks 
-			and may submit test results for any set of subtasks 
-			they wish. Methods may be submitted for the
-            end-to-end data extraction task where systems are only given the chart
-            image (no intermediate inputs) and are expected to produce the raw
-            data used to create the chart (same output as subtask 1.6.b).
-			Additionally, methods may be submitted for the visual question answering
-			task where system also only given the chart image and a question about 
-			the chart, and they are expected to produce the right answer based
-			on the chart.
+            Participants are not obligated to perform all tasks and may submit test results for any or both of the tasks.
           </p>
         </div>
         <div class="flex flex-col mb-4">
@@ -310,16 +245,6 @@ editing tool to fulfilling a user’s editing needs.
           </h2>
           <p>
 		    Register <a href="./registration.html" class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">here</a>.
-          </p>
-        </div>
-        <div class="flex flex-col mb-4">
-          <h2 class="font-medium leading-tight text-2xl my-4 text-gray-600">
-            Acknowledgements
-          </h2>
-          <p>
-            The creation of our manually curated real CHART dataset was
-            partially supported by the National Science Foundation under Grant
-            No.1640867 (OAC/DMR).
           </p>
         </div>
       </div>
